@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Omni SDK</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="ques_email">What\'s your email?</string>
+    <string name="ques_password">What\'s your password?</string>
+    <string name="title_email_desc">We need your email address to log you into the app.</string>
+    <string name="title_password_desc">Please enter your password to log in.</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="title_next">Next</string>
+    <string name="title_login">Log in</string>
+    <string name="title_forgot_password">Forgot your password?.</string>
+    <string name="title_capture_access">Capture and Assess</string>
+    <string name="title_home_details">You will capture all of the documents and receive an instant assessment for this application.</string>
+    <string name="title_start_new_accessment">Start new assessment</string>
+    <string name="title_application">Applications</string>
+    <string name="title_your_application">Your Applications</string>
+    <string name="title_view_application">View applications</string>
+
+
+    <string name="pix_ok">OK</string>
+    <string name="pix_recent">Recent</string>
+    <string name="pix_last_month">Last Month</string>
+    <string name="pix_last_week">Last Week</string>
+    <string name="cannot_click_image_pix">Can not add more than %s images</string>
+    <string name="title_standard">Standard</string>
+    <string name="title_ar">AR</string>
+    <string name="title_select">Select</string>
+    <string name="title_select_all">Select All</string>
+    <string name="title_cancel">Cancel</string>
+    <string name="title_recapture">Re-Capture</string>
+    <string name="title_home">Home</string>
+    <string name="title_application_details">All applications that you have assessed or in progress.</string>
+    <string name="title_no_image_available">There is no form captured, Click Here to capture form.</string>
+    <string name="aws_folder">omniS3</string>
+    <string name="aws_key">AKIA2343P5N4NW4O6R46</string>
+    <string name="aws_secret">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</string>
+
+   <!-- <string name="aws_bucket">omnibucket</string>
+    <string name="aws_key">AKIAJIURZUQEZDA73WFQ</string>
+    <string name="aws_secret">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</string>-->
+
+
+    <string name="title_reading_pages">Reading Pages</string>
+    <string name="title_upload_info">All pages for this case that you submitted are currently being uploaded to the cloud service and processed. You will see the results shortly.</string>
+    <string name="title_review_images">Please review the pages you have captured to upload for assessment.</string>
+    <string name="title_send_document">Send documents for assessment.</string>
+
+
+
+    <string name="finding_rect">Use darker background</string>
+    <string name="move_away">Move away</string>
+    <string name="move_closer">Move closer</string>
+    <string name="adjust_angle">Adjust angle</string>
+    <string name="hold_still">Hold still</string>
+    <string name="capturing">Capturing image</string>
+    <string name="title_blood_pressure">Blood Pressure</string>
+    <string name="title_unreadable">Unreadable</string>
+    <string name="title_no_value">No value</string>
+    <string name="title_adjust_value_area">Adjust value selection area.</string>
+    <string name="sdcard_path">/omni/new</string>
+    <string name="title_re_capture">Re-Capture</string>
+    <string name="title_required_attention">Required attention</string>
+    <string name="impty_image_list">Please Capture image to proceed</string>
+    <string name="start_step">rotate</string>
+    <string name="end_step">issue_extraction</string>
+    <string name="no_image_clicked_error_msg">Please capture image to proceed.</string>
+    <string name="title_extracting_key">Extracting Key Value</string>
+
+    <string name="description_info">Info</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+
+</resources>

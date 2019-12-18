@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="childmodel"
+            type="com.omniocr.data.model.PredictedTextBoxData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_warning_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circular_view"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_warning"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_warning_back"
+            app:layout_constraintEnd_toEndOf="@+id/iv_warning_back"
+            app:layout_constraintStart_toStartOf="@+id/iv_warning_back"
+            app:layout_constraintTop_toTopOf="@+id/iv_warning_back" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:text="@{childmodel.text}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintStart_toEndOf="@+id/iv_warning_back"
+            app:layout_constraintTop_toTopOf="@+id/iv_warning" />
+
+        <TextView
+            android:id="@+id/tv_value1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:background="@drawable/rounded_corner_red_border"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:paddingLeft="@dimen/dimen_10"
+            android:paddingTop="2dp"
+            android:paddingRight="@dimen/dimen_10"
+            android:paddingBottom="2dp"
+            android:text="@string/title_unreadable"
+            android:textColor="@color/red_alert"
+            android:textSize="@dimen/text_13sp"
+            app:layout_constraintStart_toStartOf="@+id/text1"
+            app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:background="@drawable/rounded_corner_red_border"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:paddingLeft="@dimen/dimen_10"
+            android:paddingTop="2dp"
+            android:paddingRight="@dimen/dimen_10"
+            android:paddingBottom="2dp"
+            android:text="@string/title_no_value"
+            android:textColor="@color/red_alert"
+            android:textSize="@dimen/text_13sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_value1"
+            app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:drawableLeft="@drawable/ic_adjust_value"
+            android:drawablePadding="@dimen/dimen_10"
+            android:fontFamily="@font/helvetica_neu_bold"
+            android:text="@string/title_adjust_value_area"
+            android:textColor="@color/colorSkyBlue"
+            android:textSize="@dimen/text_16sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_value1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_value1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

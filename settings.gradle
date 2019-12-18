@@ -1,0 +1,2 @@
+include ':app', ':omnisdk'
+rootProject.name='OmniOCR'

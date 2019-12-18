@@ -1,0 +1,7 @@
+.git
+.gradle
+build
+app/build
+omnisdk/build
+openCVLibrary340/build
+.DS_Store

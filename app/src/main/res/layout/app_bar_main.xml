@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/Image_view_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_menu"
+        app:layout_constraintBottom_toBottomOf="@+id/Image_view_menu"
+        app:layout_constraintEnd_toEndOf="@+id/Image_view_menu"
+        app:layout_constraintStart_toStartOf="@+id/Image_view_menu"
+        app:layout_constraintTop_toTopOf="@+id/Image_view_menu" />
+
+    <ImageView
+        android:id="@+id/Image_view_search"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/Image_view_search"
+        app:layout_constraintTop_toTopOf="@+id/Image_view_search"
+        app:layout_constraintBottom_toBottomOf="@+id/Image_view_search"
+        app:layout_constraintStart_toStartOf="@+id/Image_view_search"
+        android:src="@drawable/ic_search"/>
+
+    <TextView
+        android:id="@+id/title_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="@dimen/dimen_15"
+        android:textSize="@dimen/text_20sp"
+        android:fontFamily="@font/helvetica_neue_medium"
+        android:textColor="@color/colorTextBlack"
+        android:text="@string/title_home"
+        app:layout_constraintTop_toBottomOf="@+id/Image_view_menu"/>
+
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_home"
+        app:navGraph="@navigation/mobile_navigation"
+        android:layout_margin="@dimen/dimen_15"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

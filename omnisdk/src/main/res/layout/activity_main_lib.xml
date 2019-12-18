@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.omni.omnisdk.capture.CaptureImageViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlack"
+        android:paddingBottom="@dimen/dimen_45">
+
+        <io.fotoapparat.view.CameraView
+            android:id="@+id/camera_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/button_camera_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <io.fotoapparat.view.FocusView
+                android:id="@+id/focusView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </io.fotoapparat.view.CameraView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button_camera_type"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50"
+            android:layout_gravity="bottom"
+            android:background="@color/colorLightBlackBack"
+            app:layout_constraintBottom_toTopOf="@+id/bottomButtons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/text_standard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dimen_20"
+                android:text="@string/title_standard"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_18sp"
+                android:onClick="@{viewmodel::onStandardClicked}"
+                android:visibility="@{viewmodel.onStandardButtonClick ? View.GONE : View.VISIBLE, default = gone}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_standard"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_standard"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@color/colorGreen"
+                android:text="@{viewmodel.onStandardButtonClick ? @string/title_standard : @string/title_ar}"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_ar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_20"
+                android:onClick="@{viewmodel::onArClicked}"
+                android:text="@string/title_ar"
+                android:visibility="@{viewmodel.onStandardButtonClick ? View.VISIBLE : View.GONE, default = visible}"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button_standard"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/colorBlack"
+            android:paddingLeft="@dimen/dimen_15"
+            android:paddingTop="@dimen/dimen_15"
+            android:paddingRight="@dimen/dimen_15"
+            android:paddingBottom="@dimen/dimen_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/dimen_40"
+                android:layout_height="@dimen/dimen_40"
+                android:layout_gravity="center"
+                android:background="@drawable/ring"
+                app:layout_constraintBottom_toBottomOf="@+id/clickme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/clickme" />
+
+            <ImageView
+                android:id="@+id/clickme"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ring_grey"
+                android:onClick="@{viewmodel::onCameraClicked}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/clickme_gallary"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_gallery"
+                android:onClick="@{viewmodel::onGalleryClicked}"
+                app:layout_constraintBottom_toBottomOf="@+id/clickme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/clickme" />
+
+
+            <Button
+                android:id="@+id/text_access"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_40"
+                android:layout_gravity="top|right"
+                android:background="@{viewmodel.imageCaptureListSize >0 ? @drawable/rounded_corner_view_green : @drawable/roundedd_corner_view}"
+                android:onClick="@{viewmodel.imageCaptureListSize >0 ? viewmodel::onNextClicked : viewmodel::displayEMptyMessage}"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingRight="@dimen/dimen_15"
+                android:text="@{viewmodel.imageCountText}"
+                android:textColor="@{viewmodel.imageCaptureListSize >0 ? @color/colorBlack: @color/colorLightGrey}"
+                android:textSize="@dimen/text_16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

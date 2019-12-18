@@ -1,0 +1,6 @@
+- name: clean-to-ensure-we-can-work-even-in-the-face-of-horrible-binary-checkins
+  service: app-and-sdk
+  command: ./gradlew -PdisablePreDex clean
+- name: build
+  service: app-and-sdk
+  command: ./gradlew -PdisablePreDex build

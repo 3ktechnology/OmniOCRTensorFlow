@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/top_layout"
+            app:layout_constraintStart_toStartOf="@+id/top_layout"
+            app:layout_constraintTop_toTopOf="@+id/top_layout" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_20"
+            android:background="@drawable/ic_back_sky_blue"
+            app:layout_constraintBottom_toBottomOf="@+id/top_layout"
+            app:layout_constraintStart_toStartOf="@+id/top_layout"
+            app:layout_constraintTop_toTopOf="@+id/top_layout" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_neu_bold"
+            android:text="@string/title_re_capture"
+            android:textColor="@color/colorSkyBlue"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+            app:layout_constraintStart_toEndOf="@+id/iv_back"
+            app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dimen_20"
+            android:background="@drawable/ic_menu_grey"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_20"
+        android:fontFamily="@font/helvetica_neu_bold"
+        android:text="Martha Scott"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_layout" />
+
+    <TextView
+        android:id="@+id/application_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/helvetica_neue_medium"
+        android:text="Application  #12345678"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_16sp"
+        app:layout_constraintStart_toStartOf="@+id/user_name"
+        app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+    <TextView
+        android:id="@+id/user_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/helvetica_neue_medium"
+        android:text="123 Street address, city, zip"
+        android:textColor="@color/colorLightGrey"
+        android:textSize="@dimen/text_16sp"
+        app:layout_constraintStart_toStartOf="@+id/user_name"
+        app:layout_constraintTop_toBottomOf="@+id/application_number" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/dimen_30"
+        android:layout_marginRight="@dimen/dimen_30"
+        android:background="@color/colorLightGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/required_attention"
+        app:layout_constraintEnd_toStartOf="@+id/required_attention"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/required_attention" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/dimen_30"
+        android:layout_marginRight="@dimen/dimen_30"
+        android:background="@color/colorLightGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/required_attention"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/required_attention"
+        app:layout_constraintTop_toTopOf="@+id/required_attention" />
+
+    <TextView
+        android:id="@+id/required_attention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:fontFamily="@font/helvetica_neue_medium"
+        android:text="@string/title_required_attention"
+        android:textColor="@color/colorLightGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_address" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/dimen_30"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginRight="@dimen/dimen_30"
+        android:layout_marginBottom="@dimen/dimen_20"
+        android:background="@color/colorWhite"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/required_attention"
+        tools:listitem="@layout/parent_processing_result_item" />
+
+    <!-- <ProgressBar
+         android:id="@+id/progress"
+         android:layout_width="@dimen/dimen_50"
+         android:layout_height="@dimen/dimen_50"
+         android:visibility="@{viewmodel.responseReceived ? View.GONE : View.VISIBLE}"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!-- <TextView
+         android:id="@+id/apiCountTextView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="@dimen/dimen_20"
+         android:fontFamily="@font/roboto_medium"
+         android:textColor="@android:color/black"
+         android:textSize="@dimen/dimen_20"
+         android:visibility="@{viewmodel.responseReceived ? View.GONE : View.VISIBLE}"
+         app:layout_constraintBottom_toTopOf="@+id/progress"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
